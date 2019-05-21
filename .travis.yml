@@ -19,3 +19,5 @@ notifications:
   email:
     recipients:
       - david.nam@pulmuone.com
+  slack:
+    onlinebizdiv:G60nJXixuPRmIT8tpLB7N577
