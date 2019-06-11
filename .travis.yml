@@ -21,3 +21,16 @@ notifications:
       - david.nam@pulmuone.com
   slack:
     - onlinebizdiv:G60nJXixuPRmIT8tpLB7N577
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: springboot-webservice-deploy-ksnam # 6-3-3에서 생성한 S3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: public_read
+    wait-until-deployed: true
+    on:
+      repo: https://github.com/KiseungNam/spring-webservice.git #Github 주소
+      branch: master
